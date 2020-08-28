@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Network
 
 enum CompanyPickerViewComponents: Int, CaseIterable {
     case main
@@ -21,6 +22,8 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var priceChangeLabel: UILabel!
     @IBOutlet private weak var companyPickerView: UIPickerView!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    
+    private let connectivityMonitor = NWPathMonitor()
     
     private lazy var companies = [
         "Apple": "AAPL",
@@ -46,13 +49,26 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         
         setupPickerView()
-        
-        requestCompanyUpdate()
+        setupConnectivityMonitor()
     }
     
     private func setupPickerView() {
         companyPickerView.dataSource = self
         companyPickerView.delegate = self
+    }
+    
+    private func setupConnectivityMonitor() {
+        connectivityMonitor.pathUpdateHandler = { path in
+            DispatchQueue.main.async {
+                if path.status == .unsatisfied {
+                    self.showErrorOkAlert("No internet connection")
+                } else {
+                    self.requestCompanyUpdate()
+                }
+            }
+        }
+        let queue = DispatchQueue(label: "connectivityMonitor")
+        connectivityMonitor.start(queue: queue)
     }
     
     private func requestCompanyUpdate() {
