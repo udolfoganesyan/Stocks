@@ -31,14 +31,14 @@
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                 </activityIndicatorView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mXb-NR-RbJ">
-                    <rect key="frame" x="132" y="58" width="150" height="150"/>
+                    <rect key="frame" x="117" y="58" width="180" height="180"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="mXb-NR-RbJ" secondAttribute="height" multiplier="1:1" id="LbZ-1Y-ZcW"/>
-                        <constraint firstAttribute="height" constant="150" id="PrG-lJ-jc7"/>
+                        <constraint firstAttribute="height" constant="180" id="PrG-lJ-jc7"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="4yw-mI-kIb">
-                    <rect key="frame" x="40" y="222" width="334" height="185"/>
+                    <rect key="frame" x="40" y="252" width="334" height="185"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rLu-1l-Tfl">
                             <rect key="frame" x="0.0" y="0.0" width="334" height="23"/>

@@ -65,6 +65,7 @@ final class MainViewController: UIViewController {
         
         let selectedRow = companyPickerView.selectedRow(inComponent: CompanyPickerViewComponents.main.rawValue)
         let selectedCompany = Array(companies.values)[selectedRow]
+        
         financialNetworkManager.fetchInfo(for: selectedCompany) { (financialData) in
             if let financialData = financialData {
                 self.displayStockInfo(for: financialData)
@@ -73,6 +74,7 @@ final class MainViewController: UIViewController {
                 self.showErrorOkAlert("Oops, something went wrong during info fetching:(")
             }
         }
+        
         financialNetworkManager.fetchLogo(for: selectedCompany) { (image) in
             if let image = image {
                 self.companyLogoImageView.image = image
