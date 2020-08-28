@@ -12,7 +12,7 @@ enum CompanyPickerViewComponents: Int, CaseIterable {
     case main
 }
 
-final class ViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     @IBOutlet private weak var companyLogoImageView: UIImageView!
     @IBOutlet private weak var companyNameLabel: UILabel!
@@ -70,11 +70,14 @@ final class ViewController: UIViewController {
                 self.displayStockInfo(for: financialData)
             } else {
                 self.activityIndicator.stopAnimating()
+                self.showErrorOkAlert("Oops, something went wrong during info fetching:(")
             }
         }
         financialNetworkManager.fetchLogo(for: selectedCompany) { (image) in
             if let image = image {
                 self.companyLogoImageView.image = image
+            } else {
+                self.showErrorOkAlert("Something went wrong during logo fetching:(")
             }
         }
     }
@@ -98,7 +101,7 @@ final class ViewController: UIViewController {
 
 // MARK: - UIPickerViewDataSource
 
-extension ViewController: UIPickerViewDataSource {
+extension MainViewController: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -111,7 +114,7 @@ extension ViewController: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 
-extension ViewController: UIPickerViewDelegate {
+extension MainViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         Array(companies.keys)[row]
