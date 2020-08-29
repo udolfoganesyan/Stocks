@@ -63,12 +63,28 @@ final class MainViewController: UIViewController {
                 if path.status == .unsatisfied {
                     self.showErrorOkAlert("No internet connection")
                 } else {
-                    self.requestCompanyUpdate()
+                    self.getCompaniesList()
                 }
             }
         }
         let queue = DispatchQueue(label: "connectivityMonitor")
         connectivityMonitor.start(queue: queue)
+    }
+    
+    private func getCompaniesList() {
+        activityIndicator.startAnimating()
+        financialNetworkManager.fetchCompanies { (companies) in
+            if let companies = companies {
+                if !companies.isEmpty {
+                    self.companies = companies
+                    self.companyPickerView.reloadAllComponents()
+                }
+                self.requestCompanyUpdate()
+            } else {
+                self.activityIndicator.stopAnimating()
+                self.showErrorOkAlert("Seems like we could not fetch companies list:(")
+            }
+        }
     }
     
     private func requestCompanyUpdate() {
@@ -77,7 +93,7 @@ final class MainViewController: UIViewController {
         companySymbolLabel.text = "-"
         priceLabel.text = "-"
         priceChangeLabel.text = "-"
-        priceChangeLabel.textColor = .black
+        priceChangeLabel.textColor = .label
         
         let selectedRow = companyPickerView.selectedRow(inComponent: CompanyPickerViewComponents.main.rawValue)
         let selectedCompany = Array(companies.values)[selectedRow]
@@ -94,6 +110,7 @@ final class MainViewController: UIViewController {
         financialNetworkManager.fetchLogo(for: selectedCompany) { (image) in
             if let image = image {
                 self.companyLogoImageView.image = image
+//                self.view.backgroundColor = image.averageColor
             } else {
                 self.showErrorOkAlert("Something went wrong during logo fetching:(")
             }
