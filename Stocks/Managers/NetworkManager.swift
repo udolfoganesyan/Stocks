@@ -46,7 +46,7 @@ struct IEXNetworkManager: FinancialNetworkManager {
             let jsonObject = try JSONSerialization.jsonObject(with: data)
             
             guard let companiesJson = jsonObject as? [[String: Any]] else {
-                    return nil
+                return nil
             }
             
             var companies = [String: String]()

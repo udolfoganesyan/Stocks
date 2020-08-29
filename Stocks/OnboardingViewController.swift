@@ -8,13 +8,13 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController {
     
     @IBOutlet private weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupButton()
     }
     
