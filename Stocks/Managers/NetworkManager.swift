@@ -19,7 +19,7 @@ struct IEXNetworkManager: FinancialNetworkManager {
     static let token = "pk_d7808609ee3f419297f9afe4f0a4bf8e"
     
     func fetchCompanies(completion: @escaping (_ companies: [String: String]?) -> Void) {
-        guard  let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/iexpercent?token=\(IEXNetworkManager.token)") else {
+        guard let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/iexpercent?token=\(IEXNetworkManager.token)") else {
             completion(nil)
             return
         }
@@ -67,7 +67,7 @@ struct IEXNetworkManager: FinancialNetworkManager {
     }
     
     func fetchInfo(for company: String, completion: @escaping (_ data: FinancialData?) -> Void) {
-        guard  let url = URL(string: "https://cloud.iexapis.com/stable/stock/\(company)/quote?token=\(IEXNetworkManager.token)") else {
+        guard let url = URL(string: "https://cloud.iexapis.com/stable/stock/\(company)/quote?token=\(IEXNetworkManager.token)") else {
             completion(nil)
             return
         }
@@ -93,15 +93,11 @@ struct IEXNetworkManager: FinancialNetworkManager {
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: data)
             
-            guard let json = jsonObject as? [String: Any],
-                let companyName = json["companyName"] as? String,
-                let companyTicker = json["symbol"] as? String,
-                let price = json["latestPrice"] as? Double,
-                let priceChange = json["change"] as? Double else {
-                    return nil
+            guard let json = jsonObject as? [String: Any] else {
+                return nil
             }
             
-            let financialData = FinancialData(companyName: companyName, companyTicker: companyTicker, price: price, priceChange: priceChange)
+            let financialData = FinancialData(json: json)
             return financialData
         } catch {
             print("JSON parsing error: " + error.localizedDescription)
@@ -110,7 +106,7 @@ struct IEXNetworkManager: FinancialNetworkManager {
     }
     
     func fetchLogo(for company: String, completion: @escaping (_ logo: UIImage?) -> Void) {
-        guard  let url = URL(string: "https://cloud.iexapis.com/stable/stock/\(company)/logo?token=\(IEXNetworkManager.token)") else {
+        guard let url = URL(string: "https://cloud.iexapis.com/stable/stock/\(company)/logo?token=\(IEXNetworkManager.token)") else {
             completion(nil)
             return
         }
@@ -138,7 +134,7 @@ struct IEXNetworkManager: FinancialNetworkManager {
             
             guard let json = jsonObject as? [String: Any],
                 let urlString = json["url"] as? String,
-                let url = URL(string: urlString)else {
+                let url = URL(string: urlString) else {
                     return nil
             }
             

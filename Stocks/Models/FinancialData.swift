@@ -13,4 +13,17 @@ struct FinancialData {
     let companyTicker: String
     let price: Double
     let priceChange: Double
+    
+    init?(json: [String: Any]) {
+        guard let companyName = json["companyName"] as? String,
+            let companyTicker = json["symbol"] as? String,
+            let price = json["latestPrice"] as? Double,
+            let priceChange = json["change"] as? Double else {
+                return nil
+        }
+        self.companyName = companyName
+        self.companyTicker = companyTicker
+        self.price = price
+        self.priceChange = priceChange
+    }
 }
