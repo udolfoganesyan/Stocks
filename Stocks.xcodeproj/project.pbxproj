@@ -92,10 +92,7 @@
 			children = (
 				A1A8D4F924F97DE0000CE857 /* AppDelegate.swift */,
 				A1A8D4FB24F97DE0000CE857 /* SceneDelegate.swift */,
-				A1A8D51124F97FAE000CE857 /* MainViewController.swift */,
-				A1A8D51224F97FAE000CE857 /* MainViewController.xib */,
-				A1287FED24FA3B53009FEE23 /* OnboardingViewController.swift */,
-				A1287FEE24FA3B53009FEE23 /* OnboardingViewController.xib */,
+				A1B333A024FACAE60068DF28 /* ViewControllers */,
 				A154A54524F9950300F77B8F /* Models */,
 				A15DC30224F9A95E0092ED56 /* Managers */,
 				A15DC30524F9A9820092ED56 /* Extentions */,
@@ -104,6 +101,33 @@
 				A1A8D50724F97DE2000CE857 /* Info.plist */,
 			);
 			path = Stocks;
+			sourceTree = "<group>";
+		};
+		A1B3339E24FACAC20068DF28 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1A8D51124F97FAE000CE857 /* MainViewController.swift */,
+				A1A8D51224F97FAE000CE857 /* MainViewController.xib */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		A1B3339F24FACACF0068DF28 /* OnboardingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1287FED24FA3B53009FEE23 /* OnboardingViewController.swift */,
+				A1287FEE24FA3B53009FEE23 /* OnboardingViewController.xib */,
+			);
+			path = OnboardingViewController;
+			sourceTree = "<group>";
+		};
+		A1B333A024FACAE60068DF28 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1B3339E24FACAC20068DF28 /* MainViewController */,
+				A1B3339F24FACACF0068DF28 /* OnboardingViewController */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
