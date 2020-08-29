@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="off-Lu-Qp6">
-                    <rect key="frame" x="0.0" y="593" width="414" height="269"/>
+                    <rect key="frame" x="0.0" y="615.5" width="414" height="246.5"/>
                 </pickerView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cj3-cf-k9u">
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
@@ -38,7 +38,7 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="4yw-mI-kIb">
-                    <rect key="frame" x="32" y="252" width="350" height="194"/>
+                    <rect key="frame" x="32" y="256" width="350" height="194"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rLu-1l-Tfl">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="24.5"/>
@@ -120,9 +120,9 @@
                 <constraint firstItem="4yw-mI-kIb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="QIl-uh-Uo9"/>
                 <constraint firstItem="mXb-NR-RbJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="dkG-yK-5Yh"/>
                 <constraint firstItem="cj3-cf-k9u" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ec7-pO-eTO"/>
-                <constraint firstItem="4yw-mI-kIb" firstAttribute="top" secondItem="mXb-NR-RbJ" secondAttribute="bottom" constant="14" id="ff5-nF-Gsd"/>
+                <constraint firstItem="4yw-mI-kIb" firstAttribute="top" secondItem="mXb-NR-RbJ" secondAttribute="bottom" constant="18" id="ff5-nF-Gsd"/>
                 <constraint firstItem="cj3-cf-k9u" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jrh-Zw-h5W"/>
-                <constraint firstItem="off-Lu-Qp6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="kQe-q3-Bmg"/>
+                <constraint firstItem="off-Lu-Qp6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.275" id="kQe-q3-Bmg"/>
                 <constraint firstItem="off-Lu-Qp6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wWl-W6-d4u"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

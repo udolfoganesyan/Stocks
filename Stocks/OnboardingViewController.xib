@@ -19,13 +19,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the stocks app." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="563-kN-yoj">
-                    <rect key="frame" x="47.5" y="482" width="319" height="33"/>
+                    <rect key="frame" x="47.5" y="424" width="319" height="33"/>
                     <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-xr-Rup">
-                    <rect key="frame" x="24" y="144" width="366" height="274"/>
+                    <rect key="frame" x="24" y="114" width="366" height="274"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -34,20 +34,20 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stocksIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VQr-gk-oTN">
-                    <rect key="frame" x="70" y="144" width="274" height="274"/>
+                    <rect key="frame" x="70" y="114" width="274" height="274"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="VQr-gk-oTN" secondAttribute="height" multiplier="1:1" id="MW5-q4-6HS"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose company from the list at the bottom of the screen to see its' info." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEN-7d-sYX">
-                    <rect key="frame" x="24" y="551" width="366" height="56"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose company from the list at the bottom of the screen to see its info." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEN-7d-sYX">
+                    <rect key="frame" x="24" y="487" width="366" height="56"/>
                     <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgB-9Y-hgK">
-                    <rect key="frame" x="152.5" y="671" width="109" height="50"/>
+                    <rect key="frame" x="152.5" y="607" width="109" height="50"/>
                     <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
                     <inset key="contentEdgeInsets" minX="24" minY="10" maxX="24" maxY="10"/>
@@ -62,16 +62,16 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="iEN-7d-sYX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Sh-ou-Qse"/>
-                <constraint firstItem="iEN-7d-sYX" firstAttribute="top" secondItem="563-kN-yoj" secondAttribute="bottom" constant="36" id="1GM-49-oKI"/>
+                <constraint firstItem="iEN-7d-sYX" firstAttribute="top" secondItem="563-kN-yoj" secondAttribute="bottom" constant="30" id="1GM-49-oKI"/>
                 <constraint firstItem="563-kN-yoj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7OX-ox-6BM"/>
                 <constraint firstItem="VQr-gk-oTN" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.305804" id="8bs-sh-jqc"/>
                 <constraint firstItem="VQr-gk-oTN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="99s-7c-yJD"/>
-                <constraint firstItem="VQr-gk-oTN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="9cE-tL-ENd"/>
+                <constraint firstItem="VQr-gk-oTN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="9cE-tL-ENd"/>
                 <constraint firstItem="iEN-7d-sYX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="DZy-zP-AVk"/>
                 <constraint firstItem="gaV-xr-Rup" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="KBS-Hd-SOJ"/>
                 <constraint firstItem="gaV-xr-Rup" firstAttribute="top" secondItem="VQr-gk-oTN" secondAttribute="top" id="QHf-HB-vXP"/>
                 <constraint firstItem="gaV-xr-Rup" firstAttribute="height" secondItem="VQr-gk-oTN" secondAttribute="height" id="Sgi-aw-xoc"/>
-                <constraint firstItem="563-kN-yoj" firstAttribute="top" secondItem="VQr-gk-oTN" secondAttribute="bottom" constant="64" id="XBc-QB-ku9"/>
+                <constraint firstItem="563-kN-yoj" firstAttribute="top" secondItem="VQr-gk-oTN" secondAttribute="bottom" constant="36" id="XBc-QB-ku9"/>
                 <constraint firstAttribute="trailing" secondItem="iEN-7d-sYX" secondAttribute="trailing" constant="24" id="ZkO-kk-Jye"/>
                 <constraint firstItem="gaV-xr-Rup" firstAttribute="bottom" secondItem="VQr-gk-oTN" secondAttribute="bottom" id="Zqv-SZ-BeM"/>
                 <constraint firstItem="BgB-9Y-hgK" firstAttribute="top" secondItem="iEN-7d-sYX" secondAttribute="bottom" constant="64" id="cya-WG-dgi"/>
