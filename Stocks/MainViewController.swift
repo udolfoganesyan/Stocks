@@ -73,6 +73,7 @@ final class MainViewController: UIViewController {
     
     private func getCompaniesList() {
         activityIndicator.startAnimating()
+        
         financialNetworkManager.fetchCompanies { (companies) in
             if let companies = companies {
                 if !companies.isEmpty {
@@ -110,7 +111,6 @@ final class MainViewController: UIViewController {
         financialNetworkManager.fetchLogo(for: selectedCompany) { (image) in
             if let image = image {
                 self.companyLogoImageView.image = image
-//                self.view.backgroundColor = image.averageColor
             } else {
                 self.showErrorOkAlert("Something went wrong during logo fetching:(")
             }
