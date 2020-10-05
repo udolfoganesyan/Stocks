@@ -16,7 +16,7 @@ protocol FinancialNetworkManager {
 
 struct IEXNetworkManager: FinancialNetworkManager {
     
-    static let token = "pk_d7808609ee3f419297f9afe4f0a4bf8e"
+    static let token = "/"
     
     func fetchCompanies(completion: @escaping (_ companies: [String: String]?) -> Void) {
         guard let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/iexpercent?token=\(IEXNetworkManager.token)") else {
